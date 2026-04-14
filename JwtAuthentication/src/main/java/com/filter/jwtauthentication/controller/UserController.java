@@ -1,6 +1,6 @@
 package com.filter.jwtauthentication.controller;
 
-import com.filter.jwtauthentication.model.User;
+import com.filter.jwtauthentication.entity.User;
 import com.filter.jwtauthentication.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

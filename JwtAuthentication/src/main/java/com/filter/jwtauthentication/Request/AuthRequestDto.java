@@ -1,12 +1,11 @@
-package com.filter.jwtauthentication.model;
+package com.filter.jwtauthentication.Request;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class AuthRequest {
+public class AuthRequestDto {
     private String username;
     private String password;
 }

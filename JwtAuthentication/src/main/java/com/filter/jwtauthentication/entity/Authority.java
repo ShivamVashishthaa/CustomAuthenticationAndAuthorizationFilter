@@ -1,10 +1,9 @@
-package com.filter.jwtauthentication.model;
+package com.filter.jwtauthentication.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,14 +13,17 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Authority {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "role_id")
+    private String id;
     private String name;
-    @JsonIgnore
+
     @ManyToMany(mappedBy = "authorities")
     private Set<User> users = new HashSet<>();
+
 
 //    If want to store authority in db
 //    // 🔥 ADD helper

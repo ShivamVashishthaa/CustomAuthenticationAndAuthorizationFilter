@@ -1,7 +1,7 @@
 package com.filter.jwtauthentication.config.helperclasses;
 
 
-import com.filter.jwtauthentication.model.User;
+import com.filter.jwtauthentication.entity.User;
 import lombok.AllArgsConstructor;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;

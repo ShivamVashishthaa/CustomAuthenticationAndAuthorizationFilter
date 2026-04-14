@@ -2,7 +2,7 @@ spring:
   application:
     name: JwtAuthentication
   datasource:
-    url: jdbc:postgresql://localhost:5432/userandroles
+    url: jdbc:postgresql://localhost:5431/userandroles
     username: admin
     password: admin123
     driver-class-name: org.postgresql.Driver

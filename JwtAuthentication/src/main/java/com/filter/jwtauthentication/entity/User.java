@@ -1,7 +1,5 @@
-package com.filter.jwtauthentication.model;
+package com.filter.jwtauthentication.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,33 +12,38 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer id;
+    private String id;
+
     @Column(nullable = false)
     private String username;
+
     @Column(nullable = false)
     private String password;
     private String email;
+
     @Column(nullable = false)
     private String firstName;
     private String lastName;
+
     @ManyToMany(fetch = FetchType.EAGER)
+    @Builder.Default
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    Set<Authority> authorities = new HashSet<>();
+    private Set<Authority> authorities = new HashSet<>();
 
     public void addAuthority(Authority authority) {
         if (authority == null) return;
 
         if (!this.authorities.contains(authority)) {
             this.authorities.add(authority);
-        }
+        }}
 
 //    If want to add authrity in  db
 //    // 🔥 ADD helper
@@ -66,5 +69,5 @@ public class User {
 //        }
 //        }
 
-    }
+
 }

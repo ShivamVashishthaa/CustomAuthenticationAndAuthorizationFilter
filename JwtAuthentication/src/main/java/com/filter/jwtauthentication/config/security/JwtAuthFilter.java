@@ -35,11 +35,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String path = request.getRequestURI();
 
             // ✅ 🔥 PUBLIC ENDPOINT SKIP (MOST IMPORTANT)
-            if (path.startsWith("/api/sign/")) {
+            if (path.startsWith("/auth/v1/")) {
                 filterChain.doFilter(request, response);
                 return;
             }
-
+//
             String authHeader = request.getHeader("Authorization");
 
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
