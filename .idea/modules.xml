@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CustomAuthenticationAndAuthorizationFilter.iml" filepath="$PROJECT_DIR$/.idea/CustomAuthenticationAndAuthorizationFilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JwtApiGateway/JwtApiGateway.iml" filepath="$PROJECT_DIR$/JwtApiGateway/JwtApiGateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/JwtAuthentication.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JwtAuthentication.main.iml" />
     </modules>
   </component>
